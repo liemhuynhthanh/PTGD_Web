@@ -55,7 +55,6 @@ if (mark_bmi2 > john_bmi2) {
 
 // JF part 3
 
-
 var dolphinsScores1 = [96, 108, 89];
 var koalasScores1 = [88, 91, 110];
 
@@ -96,7 +95,6 @@ function determineWinner(dolphinsScores, koalasScores) {
         console.log("No team qualifies.");
     }
 }
-
 // Dữ liệu kiểm tra
 console.log("Test Data 1:");
 determineWinner(dolphinsScores1, koalasScores1);
@@ -106,4 +104,24 @@ determineWinner(dolphinsScoresBonus1, koalasScoresBonus1);
 
 console.log("\nBonus Data 2:");
 determineWinner(dolphinsScoresBonus2, koalasScoresBonus2);
+
+// JF part 4
+
+// Test Data
+let bills = [275, 40, 430];
+
+bills.forEach(function (bill) {
+    
+    let tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.2;
+
+    
+    let total = bill + tip;
+
+   
+    console.log(
+        "The bill was " + bill +
+        ", the tip was " + tip.toFixed(2) +
+        ", and the total value " + total.toFixed(2)
+    );
+});
 
