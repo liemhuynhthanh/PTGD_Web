@@ -2,32 +2,32 @@
 // Test Data 1
 var mark_mass1 = 78;
 var mark_height1 = 1.69;
-var john_mass1 = 92; 
-var john_height1 = 1.95; 
+var john_mass1 = 92;
+var john_height1 = 1.95;
 
 var mark_bmi1 = mark_mass1 / (mark_height1 ** 2);
 var john_bmi1 = john_mass1 / (john_height1 ** 2);
 var mark_higher_bmi1 = mark_bmi1 > john_bmi1;
 
 console.log("Test Data 1:");
-console.log("Mark's BMI: "+ mark_bmi1);
-console.log("John's BMI: "+john_bmi1);
-console.log("Does Mark have a higher BMI than John?"+mark_higher_bmi1);
+console.log("Mark's BMI: " + mark_bmi1);
+console.log("John's BMI: " + john_bmi1);
+console.log("Does Mark have a higher BMI than John?" + mark_higher_bmi1);
 
 // Test Data 2
 var mark_mass2 = 95;
 var mark_height2 = 1.88;
-var john_mass2 = 85; 
-var john_height2 = 1.76; 
+var john_mass2 = 85;
+var john_height2 = 1.76;
 
 var mark_bmi2 = mark_mass2 / (mark_height2 ** 2);
 var john_bmi2 = john_mass2 / (john_height2 ** 2);
 var mark_higher_bmi2 = mark_bmi2 > john_bmi2;
 
 console.log("\nTest Data 2:");
-console.log("Mark's BMI: "+mark_bmi2);
-console.log("John's BMI: "+john_bmi2);
-console.log("Does Mark have a higher BMI than John?"+mark_higher_bmi2);
+console.log("Mark's BMI: " + mark_bmi2);
+console.log("John's BMI: " + john_bmi2);
+console.log("Does Mark have a higher BMI than John?" + mark_higher_bmi2);
 
 // JF part1- 2
 
@@ -40,16 +40,16 @@ john_bmi2 = parseFloat(john_bmi2);
 
 // Test Data 1
 if (mark_bmi1 > john_bmi1) {
-    console.log("Mark's BMI "+ mark_bmi1+" is higher than John's" +john_bmi1+"!");
+    console.log("Mark's BMI " + mark_bmi1 + " is higher than John's" + john_bmi1 + "!");
 } else {
-    console.log("John's BMI "+john_bmi1+" is higher than Mark's "+mark_bmi1+"!");
+    console.log("John's BMI " + john_bmi1 + " is higher than Mark's " + mark_bmi1 + "!");
 }
 
 // Test Data 2 
 if (mark_bmi2 > john_bmi2) {
-    console.log("Mark's BMI "+mark_bmi2+" is higher than John's "+john_bmi2+"!");
+    console.log("Mark's BMI " + mark_bmi2 + " is higher than John's " + john_bmi2 + "!");
 } else {
-    console.log("John's BMI "+john_bmi2+" is higher than Mark's "+mark_bmi2+"!");
+    console.log("John's BMI " + john_bmi2 + " is higher than Mark's " + mark_bmi2 + "!");
 }
 
 
@@ -82,9 +82,9 @@ function determineWinner(dolphinsScores, koalasScores) {
     if (dolphinsAverage >= 100 || koalasAverage >= 100) {
         // So sánh điểm trung bình để xác định đội thắng
         if (dolphinsAverage > koalasAverage) {
-            console.log("Dolphins win the trophy! 🏆");
+            console.log("Dolphins win the trophy!");
         } else if (koalasAverage > dolphinsAverage) {
-            console.log("Koalas win the trophy! 🏆");
+            console.log("Koalas win the trophy!");
         } else if (dolphinsAverage === koalasAverage && dolphinsAverage >= 100) {
             console.log("All win");
         } else {
@@ -111,13 +111,13 @@ determineWinner(dolphinsScoresBonus2, koalasScoresBonus2);
 let bills = [275, 40, 430];
 
 bills.forEach(function (bill) {
-    
+
     let tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.2;
 
-    
+
     let total = bill + tip;
 
-   
+
     console.log(
         "The bill was " + bill +
         ", the tip was " + tip.toFixed(2) +
@@ -151,6 +151,28 @@ checkWinner(dolphinsAvg1, koalasAvg1);      // Kiểm tra đội chiến thắng
 var dolphinsAvg2 = calcAverage(85, 54, 41); // Tính điểm trung bình của Dolphins
 var koalasAvg2 = calcAverage(23, 34, 27);   // Tính điểm trung bình của Koalas
 console.log("\nTest Data 2:");
-checkWinner(dolphinsAvg2, koalasAvg2);      // Kiểm tra đội chiến thắng
+checkWinner(dolphinsAvg2, koalasAvg2);
+
+
+// Part 2-2
+
+// Đổi tên biến 'bills' thành 'newBills' hoặc tên khác
+var newBills = [125, 555, 44];
+
+// Mảng 'tips' chứa tiền tip cho mỗi hóa đơn
+var tips = newBills.map(function (bill) {
+    return calcTip(bill);
+});
+
+// Mảng 'total' chứa tổng tiền (hóa đơn + tip)
+var total = newBills.map(function (bill, index) {
+    return bill + tips[index];
+});
+
+// In ra kết quả
+console.log("Bills: " + newBills);
+console.log("Tips: " + tips);
+console.log("Total: " + total);
+
 
 
