@@ -1,4 +1,4 @@
-// JF part 1
+// JF part 1-1
 // Test Data 1
 var mark_mass1 = 78;
 var mark_height1 = 1.69;
@@ -29,7 +29,7 @@ console.log("Mark's BMI: "+mark_bmi2);
 console.log("John's BMI: "+john_bmi2);
 console.log("Does Mark have a higher BMI than John?"+mark_higher_bmi2);
 
-// JF part 2
+// JF part1- 2
 
 
 mark_bmi1 = parseFloat(mark_bmi1);
@@ -38,7 +38,7 @@ john_bmi1 = parseFloat(john_bmi1);
 mark_bmi2 = parseFloat(mark_bmi2);
 john_bmi2 = parseFloat(john_bmi2);
 
-// Test Data 1 
+// Test Data 1
 if (mark_bmi1 > john_bmi1) {
     console.log("Mark's BMI "+ mark_bmi1+" is higher than John's" +john_bmi1+"!");
 } else {
@@ -53,7 +53,7 @@ if (mark_bmi2 > john_bmi2) {
 }
 
 
-// JF part 3
+// JF part 1-3
 
 var dolphinsScores1 = [96, 108, 89];
 var koalasScores1 = [88, 91, 110];
@@ -105,7 +105,7 @@ determineWinner(dolphinsScoresBonus1, koalasScoresBonus1);
 console.log("\nBonus Data 2:");
 determineWinner(dolphinsScoresBonus2, koalasScoresBonus2);
 
-// JF part 4
+// JF part 1 -4
 
 // Test Data
 let bills = [275, 40, 430];
@@ -124,4 +124,33 @@ bills.forEach(function (bill) {
         ", and the total value " + total.toFixed(2)
     );
 });
+
+
+// Part 2-1
+// Arrow function để tính điểm trung bình của 3 lượt
+var calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+// Hàm kiểm tra đội chiến thắng theo luật
+function checkWinner(avgDolphins, avgKoalas) {
+    if (avgDolphins >= 2 * avgKoalas) {
+        console.log("Dolphins win (" + avgDolphins + " vs. " + avgKoalas + ")");
+    } else if (avgKoalas >= 2 * avgDolphins) {
+        console.log("Koalas win (" + avgKoalas + " vs. " + avgDolphins + ")");
+    } else {
+        console.log("No team wins!");
+    }
+}
+
+// Test Data 1
+var dolphinsAvg1 = calcAverage(44, 23, 71); // Tính điểm trung bình của Dolphins
+var koalasAvg1 = calcAverage(65, 54, 49);   // Tính điểm trung bình của Koalas
+console.log("Test Data 1:");
+checkWinner(dolphinsAvg1, koalasAvg1);      // Kiểm tra đội chiến thắng
+
+// Test Data 2
+var dolphinsAvg2 = calcAverage(85, 54, 41); // Tính điểm trung bình của Dolphins
+var koalasAvg2 = calcAverage(23, 34, 27);   // Tính điểm trung bình của Koalas
+console.log("\nTest Data 2:");
+checkWinner(dolphinsAvg2, koalasAvg2);      // Kiểm tra đội chiến thắng
+
 
