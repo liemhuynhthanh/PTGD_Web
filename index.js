@@ -51,3 +51,59 @@ if (mark_bmi2 > john_bmi2) {
 } else {
     console.log("John's BMI "+john_bmi2+" is higher than Mark's "+mark_bmi2+"!");
 }
+
+
+// JF part 3
+
+
+var dolphinsScores1 = [96, 108, 89];
+var koalasScores1 = [88, 91, 110];
+
+var dolphinsScoresBonus1 = [97, 112, 101];
+var koalasScoresBonus1 = [109, 95, 123];
+
+var dolphinsScoresBonus2 = [97, 112, 101];
+var koalasScoresBonus2 = [109, 95, 106];
+
+function avg(scores) {
+    return scores.reduce(function (a, b) { return a + b; }, 0) / scores.length;
+}
+
+// Hàm xác định đội chiến thắng dựa trên điểm trung bình và các điều kiện
+function determineWinner(dolphinsScores, koalasScores) {
+    // Tính điểm trung bình cho mỗi đội
+    const dolphinsAverage = avg(dolphinsScores);
+    const koalasAverage = avg(koalasScores);
+
+    // In điểm trung bình của từng đội
+    console.log("Dolphins Average: " + dolphinsAverage.toFixed(2));
+    console.log("Koalas Average: " + koalasAverage.toFixed(2));
+
+    // Kiểm tra xem có đội nào đủ điều kiện nhận cúp không
+    if (dolphinsAverage >= 100 || koalasAverage >= 100) {
+        // So sánh điểm trung bình để xác định đội thắng
+        if (dolphinsAverage > koalasAverage) {
+            console.log("Dolphins win the trophy! 🏆");
+        } else if (koalasAverage > dolphinsAverage) {
+            console.log("Koalas win the trophy! 🏆");
+        } else if (dolphinsAverage === koalasAverage && dolphinsAverage >= 100) {
+            console.log("All win");
+        } else {
+            console.log("No team win.");
+        }
+    } else {
+        // Không đội nào đủ điều kiện nhận cúp
+        console.log("No team qualifies.");
+    }
+}
+
+// Dữ liệu kiểm tra
+console.log("Test Data 1:");
+determineWinner(dolphinsScores1, koalasScores1);
+
+console.log("\nBonus Data 1:");
+determineWinner(dolphinsScoresBonus1, koalasScoresBonus1);
+
+console.log("\nBonus Data 2:");
+determineWinner(dolphinsScoresBonus2, koalasScoresBonus2);
+
